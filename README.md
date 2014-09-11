@@ -11,6 +11,7 @@ This is the list of notes I'd like to finish. A checkbox show if the notes are c
 
 ## Notes: Table of contents
 
+* [ ] [General Notes] (generalnotes.md)
 * [ ] Development Environment
   * [ ] LAMP (PHP) Setup
     * [ ] Windows

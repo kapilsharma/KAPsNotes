@@ -58,3 +58,76 @@ I **install Kate through Ubuntu Software Center**. However terminal do not work 
 sudo apt-get install konsole
 ```
 
+**Kate projets**
+
+Adding projects in kate need some manual operation. Create a .kateproject file in project root directory and add following JSON in it (git git project)
+
+```
+{
+  "name": "KAPsNotes",
+  "files": [ { "git": 1 } ]
+}
+```
+
+### Java
+
+Java is needed for many softwares including IDE like PHP Storm, Netbeans etc. So installing java is next task.
+
+I also do Java development so I install JDK but if you are not java developer, JRE is sufficient.
+
+#### Open JDK
+
+Open JDK is open source implementation of Java (Oracle's Java license is not very permisive)
+
+```
+sudo apt-get update
+sudo apt-get install default-jre
+sudo apt-get install default-jdk
+```
+
+#### Oracle JDK
+
+It is easy to install oracle JDK through Python software repository
+
+```
+sudo apt-get install python-software-properties
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+```
+
+Oracle JDK 7
+
+```
+sudo apt-get install oracle-java7-installer
+```
+
+Oracle JDK 8
+
+```
+sudo apt-get install oracle-java8-installer
+```
+
+Once we have both Open JRE and Oracle JRE, we can switch between them as followed
+
+```
+sudo update-alternatives --config java
+
+There are 2 choices for the alternative java (providing /usr/bin/java).
+
+Selection    Path                                            Priority   Status
+------------------------------------------------------------
+* 0            /usr/lib/jvm/java-7-oracle/jre/bin/java          1062      auto mode
+  1            /usr/lib/jvm/java-6-openjdk-amd64/jre/bin/java   1061      manual mode
+  2            /usr/lib/jvm/java-7-oracle/jre/bin/java          1062      manual mode
+
+Press enter to keep the current choice[*], or type selection number: 
+```
+
+Enter number of Java implementation you want to use
+
+Default JDK can also be selected similarly
+
+```
+sudo update-alternatives --config javac
+```
+

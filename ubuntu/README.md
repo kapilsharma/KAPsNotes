@@ -54,6 +54,8 @@ Vim is difficult to master but once mastered, you cant be satisfied with any oth
 sudo apt-get install vim
 ```
 
+Setting vim is huge task in it self so I'm covering it in separate document. If you are interested to see how to setup vim as php ide, [click here](vim/README.md)
+
 ### Kate
 
 Kate is my personal choice of editor. I like kate due to build in terminal which allow me to run few commands without leaving editor. Well I didn't knew about Guake earlier. Now even in Kate, I prefer to run commands using Guake but Kate is still my editor (habit) for simple text files. 

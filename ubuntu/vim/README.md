@@ -73,7 +73,7 @@ This is just an example file, and we will be adding more plugins here. However w
 * **L9** - Dependency for few other plugins
 * **Command-T** - Quick open files and buffer
 * **php.vim** - PHP Syntax highlighting
-* **NERDTree** - Tree view of project files.
+* **[NERDTree](nerdtree.md)** - Tree view of project files.
 
 Save .vimrc file and we are ready to install above plugins.
 

@@ -13,6 +13,7 @@ This is the list of notes I'd like to finish. A checkbox show if the notes are c
 
 * [ ] [General Notes] (generalnotes.md)
 * [ ] Development Environment
+  * [ ] [Ubuntu](ubuntu/README.md)
   * [ ] LAMP (PHP) Setup
     * [ ] Windows
     * [ ] Linux

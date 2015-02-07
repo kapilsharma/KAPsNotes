@@ -24,6 +24,12 @@ This is another terminal application. While terminal is heavy weight, Guake is v
 gconftool-2 –install-schema-file=/usr/share/gconf/schemas/guake.schemas
 ```
 
+We may also want Guake to start at boot time. This can be done with following command:
+
+```
+sudo ln -s /usr/share/applications/guake.desktop /etc/xdg/autostart/
+```
+
 ### Update apt-get
 
 Must update apt-get program before using it.

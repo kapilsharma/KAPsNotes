@@ -139,3 +139,111 @@ Default JDK can also be selected similarly
 sudo update-alternatives --config javac
 ```
 
+## Lamp
+
+### Apache
+
+```
+sudo apt-get update
+sudo apt-get install apache2
+```
+
+### MySQL
+
+```
+sudo apt-get install mysql-server php5-mysql
+sudo mysql_install_db
+sudo mysql_secure_installation
+```
+
+### PHP
+
+```
+sudo apt-get install php5 libapache2-mod-php5 php5-mcrypt
+```
+
+By default, apache look for index.html file in requested path. We now need apache to look for index.php file first. To do that, open `/etc/apache2/mods-enabled/dir.conf` file and change
+
+```
+<IfModule mod_dir.c>
+    DirectoryIndex index.html index.cgi index.pl index.php index.xhtml index.htm
+</IfModule>
+```
+
+to 
+
+```
+<IfModule mod_dir.c>
+    DirectoryIndex index.php index.html index.cgi index.pl index.xhtml index.htm
+</IfModule>
+```
+
+Please note we put index.php first after DirectoryIndex. We must restart apache so that above changes can take effect.
+
+```
+sudo service apache2 restart
+```
+
+#### Installing PHP modules
+
+We obviously need to install some php modules. To check the list of available php modules, run following command.
+
+```
+apt-cache search php5-
+```
+
+From the list, we can decide which modelus we need to install. Some of the common modules, which serve most of the requirements, can be installed as follow:
+
+```
+sudo apt-get install php5-mysql php5-curl php5-gd php5-intl php-pear php5-imagick php5-imap php5-mcrypt php5-memcache php5-ming php5-ps php5-pspell php5-recode php5-snmp php5-sqlite php5-tidy php5-xmlrpc php5-xsl php5-cli
+```
+
+### Testing setup
+
+By default, apache serve files from `/var/www/html` folder. Lets create a file `info.php` in that folder and put following code in it.
+
+```
+<?PHP
+phpinfo();
+```
+
+Save the file and visit URL `http://localhost/info.php. This will open a page with information about our LAMP setup.
+
+### Virtual hosts
+
+In the above example, we had a URL like `localhost/filename`. However in real projects, this not a very useful url, specially in case you work on many projects. If production url of our project is www.xyz.com, we might want to have dev.xyz.com as local dev box url. This devbox url is possible through virtual hosts.
+
+nother reason of working with virtual hosts, as non root user, `var/www` directory do not belog to you. As developer, we must keep our projects like ~/dev/projectname/. This is also possible through virtual hosts.
+
+/etc/apache2/sites-available/phptest.conf
+
+```
+<VirtualHost *:80>
+        ServerAdmin kapshainfo@gmail.com
+        ServerName kapil.phptest.com
+        DocumentRoot /home/kapil/dev/test/phptest
+
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+        <Directory /home/kapil/dev/test/phptest/>
+                Options Indexes FollowSymLinks
+                AllowOverride None
+                Require all granted
+        </Directory>
+</VirtualHost>
+```
+
+Run
+
+```
+sudo a2ensite phptest.conf
+sudo service apache2 reload
+sudo service apache2 restart
+```
+
+Add following line at last of `/etc/hosts`
+
+```
+127.0.0.1    kapil.phptest.com
+```

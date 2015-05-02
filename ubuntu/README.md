@@ -6,6 +6,14 @@ This document is created for ubuntu 14.04
 
 It expect only ubuntu is installed and nothing else is installed after OS.
 
+## Remove advertisements
+
+In Ubuntu start menu, while searching for any program or document, we also get online search results. This is frustration. So first thing, I shut down online search results.
+
+Go to System settings > Security and privacy.
+
+On `search` tab, mark `Include online search results` off. Wow, online search results will not disturb now.
+
 ## Quick basic setup.
 
 ### Terminals
@@ -232,6 +240,23 @@ nother reason of working with virtual hosts, as non root user, `var/www` directo
                 Require all granted
         </Directory>
 </VirtualHost>
+
+## Curl
+
+```
+sudo apt-get install curl
+```
+
+## Composer
+
+```
+curl -sS https://getcomposer.org/installer | sudo php
+```
+
+shortcut
+
+```
+sudo mv composer.phar /usr/local/bin/composer
 ```
 
 Run
@@ -247,3 +272,22 @@ Add following line at last of `/etc/hosts`
 ```
 127.0.0.1    kapil.phptest.com
 ```
+
+##  Install curl
+
+```
+curl -sS https://getcomposer.org/installer | php
+```
+
+## Composer
+
+```
+curl -sS https://getcomposer.org/installer | php
+```
+
+Making shortcut
+
+```
+sudo mv composer.phar /usr/local/bin/composer
+```
+

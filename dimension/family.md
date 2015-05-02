@@ -1,0 +1,33 @@
+# Family
+
+- Rajnishwaniji -> Tejaswaniji
+  - Rajeshwani
+    - Jyoteshwaniji
+      - Ashwaniji
+        - Yashshawani
+          - Priyadarshwani
+  - Shukreshwaniji (Poisened by Rajeshwani)
+    - Swadeshwaniji
+      - Jagdishwaniji (Jagatdas)
+        - Jaganndas (Jagannwani)
+          - Awadheshdas (Awadheshwani)
+- Tukaram Singh
+ - Veer Singh
+   - Vikram Singh
+     - Hanumant Singh
+       - Tez Singh
+     - Sampat Singh (Renamed as Vikram Singh)
+       - Shambhu Singh
+       - Ashok Singh
+       - Shatrukaal Singh
+   - Vishal Singh (Renamed As Kaalveer Singh)
+     - Kaal Singh
+     - Kapat Singh
+       - Shaan Singh
+       - Sudarshan Singh
+     - Keshav Singh (Killed by Hanumant Singh while kidnapping his son)
+- Naga Singh
+- Muskara Singh
+- Shakura
+- Mahakaal Singh
+- Bhramrishiji

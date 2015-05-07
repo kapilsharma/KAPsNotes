@@ -291,3 +291,18 @@ Making shortcut
 sudo mv composer.phar /usr/local/bin/composer
 ```
 
+# Windows programs
+
+Occationally, we need to install and run few windows program. Although not all, but we can run majority of windows programs on linux by using `wine` with or without `run on linux`.
+
+## Installing wine
+
+We need to add wine repository before we can install it
+
+```bash
+sudo add-apt-repository ppa:ubuntu-wine/ppa
+sudo apt-get update
+sudo apt-get install wine1.7
+```
+
+> Last command used to inatall wine version 1.7, which was latest at the time of writing. Please check latest version and replace `1.7` with that.

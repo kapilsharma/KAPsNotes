@@ -305,4 +305,11 @@ sudo apt-get update
 sudo apt-get install wine1.7
 ```
 
+Installing dotnet framework redistributable 4.0
+
+```bash
+wget http://winetricks.googlecode.com/svn/trunk/src/winetricks
+bash winetricks dotnet40
+```
+
 > Last command used to inatall wine version 1.7, which was latest at the time of writing. Please check latest version and replace `1.7` with that.

@@ -27,5 +27,8 @@ This is the list of notes I'd like to finish. A check box show if the notes are 
   * [ ] Cassendra
 * [ ] Programming Languages
   * [ ] PHP
+    * [ ] Laravel
+    * [ ] Symfony
+    * [ ] Wordpress
   * [ ] Java Script
   * [ ] Android

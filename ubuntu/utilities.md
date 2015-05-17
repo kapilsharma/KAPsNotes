@@ -55,3 +55,21 @@ If we want to use any specific database to search a word, we can use `-d` option
 ```bash
 dict -d wordnet "word"
 ```
+
+### Dictionary GUI
+
+#### Gnome Dictionary
+
+```bash
+sudo apt-get install gnome-dictionary
+```
+
+Gnome dictionary by default look words online. If internet is not always available on the system, we can configure it to use local dictd server. To do this, start Gnome dictionary and open Edit > preferences. Under dictionary preferences, click `add` button. Then click `add source` and add host name (localhost), port (2628) and other info and click add button.
+
+#### Golden dict
+
+Golden dict is a good GUI that works with dictd server. It also allow quick lookup, which is handy at many times.
+
+```bash
+sudo apt-get install goldendict
+```

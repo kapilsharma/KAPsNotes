@@ -32,12 +32,13 @@ Must update apt-get program before using it.
 sudo apt-get update
 ```
 
-### Git
+### Git and SVN
 
 Obviously as developer, we need git.
 
 ```
 sudo apt-get install git
+sudo apt-get install subversion
 ```
 
 ### Vim

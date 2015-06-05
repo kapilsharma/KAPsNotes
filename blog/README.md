@@ -10,7 +10,13 @@ Planned blog posts
 
 ## Planned
 
+- Making static blog with jakyll (Try on sitepoint or tutsplus)
 - MySQL Scaling (Example from Xzisu project)
 - Refactoring series
-- Making static blog with jakyll (Try on sitepoint or tutsplus)
 - Dump production db for local development. (Alankar's work)
+- OAuth (What is oauth? How to make oauth with laravel.)
+- Making Restful API with laravel (Get info from what we do on Blits development.)
+- Getting started with composer.
+- Mongo DB (Example from presentation done in office)
+- NodeJS (Get info from slimmenifish example)
+- Cloud development (Example of cloud 9)

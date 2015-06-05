@@ -3,7 +3,7 @@
 This repository has been created to make (and share) my personal notes on different topics. Although I made it for personal use, any one can use this repository as reference or as they would like to.
 
 ## Notes
-This is the list of notes I'd like to finish. A checkbox show if the notes are completed
+This is the list of notes I'd like to finish. A check box show if the notes are completed
 
 * [ ] Notes I'd to made.
 * [ ] [Link: Notes started but not complete](www.example.com)
@@ -13,6 +13,7 @@ This is the list of notes I'd like to finish. A checkbox show if the notes are c
 
 * [ ] [General Notes] (generalnotes.md)
 * [ ] Development Environment
+  * [ ] [Ubuntu](ubuntu/README.md)
   * [ ] LAMP (PHP) Setup
     * [ ] Windows
     * [ ] Linux
@@ -24,3 +25,10 @@ This is the list of notes I'd like to finish. A checkbox show if the notes are c
   * [ ] Postgress
   * [ ] MongoDB
   * [ ] Cassendra
+* [ ] Programming Languages
+  * [ ] PHP
+    * [ ] Laravel
+    * [ ] Symfony
+    * [ ] Wordpress
+  * [ ] Java Script
+  * [ ] Android

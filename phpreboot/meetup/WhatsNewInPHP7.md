@@ -16,7 +16,7 @@ Blog: blog.kapilsharma.info
 
 email: kapil at kapil sharma dot info
 
-## Agenda of metope
+## Agenda of meetup
 PHP 7 (supposed to be) releasing in October 2015
 
 What is new in it?

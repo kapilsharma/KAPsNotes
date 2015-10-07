@@ -161,6 +161,8 @@ Image: facebook.jpg
 
 ## Phalcon
 
+> slide 20
+
 Image: Phalcon logo
 
 > What is this?
@@ -189,4 +191,401 @@ In short, there were lot of challenges in front of PHP
 - Decrease memory consumption.
 - New features.
 
-## 
+> All necessary for php to remain as useful scripting language for web development.
+
+## PHP NG
+
+- PHP New Generation.
+- Internal branch in php repo with goal of improved performance and efficient memory useage.
+- PHP NG is not the JIT but internal refactoring to make JIT possible in future.
+- PHPNG never released but later on, it is merged to master and becomes base of PHP 7.
+
+> Notes: So that all about short introduction of what happened to PHP since 2005.
+
+## Whats new PHP 7?
+
+-> Are we prepared for that?
+-> What was new in PHP 5.3, 5.4?
+
+> As discussed, many PHP 6 features were merged in PHP 5.3 and 5.4.
+
+> Unless we know about them, we can't take benefit of PHP 7.
+
+## Agenda of meetup
+
+PHP 7 (supposed to be) releasing in October 2015
+- ~~Where is PHP 6?~~
+- ~~What is Hack/HHVM/Zephir?~~
+- ~~What is/was PHP NG?~~
+- ~~What is new in PHP NG? (Speed improvement)~~
+- New features in PHP 5.3-5.6.
+- New features in PHP 7.
+- How will it impact me?
+
+## What was new in PHP 5.3?
+
+Most important:
+
+- * Namespace
+- Late static binding
+- Jump labels (limited goto)
+- Closures (Lambda/Anonymous function)
+- Now doc
+- Constants outside class using const keyword
+- Shorthand ternary operator
+- New magic method: \_\_callStatic & \_\_invoke
+
+## Namespace
+
+Have you worked with class names like
+
+- Zend_Validate_Db_NoRecordExists
+- Zend_Auth_Storage_Session
+- Zend_Acl_Role_Registry
+
+Why such a long names?
+
+## Zend_Auth_Storage_Session
+
+Session, a very common class name. We can have custom class called 'Session'.
+
+$session = new Session();
+
+- Is it our custom class or Session class form ZF1?
+-> Well we can't say.
+-> $session = new Zend_Auth_Storage_Session()
+-> We can now easily say which class we are referring.
+
+## Auto loading
+
+$session = new Zend_Auth_Storage_Session();
+
+- or
+
+include_once(library/Zend/Auth/Storage/Session);
+$session = new Zend_Auth_Storage_Session();
+
+## Auto loading
+
+> Slide 30
+
+ZF 1 comes with autoloading support which allow us using
+
+$session = new Zend_Auth_Storage_Session();
+
+Internally auto loader will split class with '\_' and use it as path.
+
+Still 'Zend_Auth_Storage_Session' is ugly class name, right?
+
+## Auto loading
+
+With PHP 5.3 namespace, there are standard ways of auto loading.
+
+- PSR 0
+- PSR 4
+
+> We are not going into PSR details, please google php-fig and psr for details.
+
+## Namespace
+
+Same class in ZF2 is
+
+```php
+<?php
+namespace Zend\Authentication\Storage;
+use Zend\Session\Container as SessionContainer;
+use Zend\Session\ManagerInterface as SessionManager;
+class Session implements StorageInterface {
+  //code
+}
+```
+
+> So class name is simple and there will be no name collusion due to same class name. Even if class name is same, namespace will be different.
+
+## Namespace
+
+```php
+<?php
+// application library 1
+namespace App\Lib1;
+
+// Constants can be defined outside class.
+const MYCONST = 'App\Lib1\MYCONST';
+
+function MyFunction() {
+	return __FUNCTION__;
+}
+
+class MyClass {
+	static function WhoAmI() {
+		return __METHOD__;
+	}
+}
+```
+
+```php
+<?php
+// Assuming we are not using autoloading
+require_once('lib1.php');
+
+echo \App\Lib1\MYCONST . "\n";
+echo \App\Lib1\MyFunction() . "\n";
+echo \App\Lib1\MyClass::WhoAmI() . "\n";
+```
+
+Output
+
+App\Lib1\MYCONST
+
+App\Lib1\MyFunction
+
+App\Lib1\MyClass::WhoAmI
+
+## Namespace
+
+- Name space in itself are easy.
+- However it drastically changed the way applications are structured.
+- This force big project to stop backward compatibility.
+- Example Symfony 2 and Zend Framework 2.
+
+## Closures or Lambda or Anonymous functions
+
+Taken from PHP manual
+
+Anonymous functions, also known as closures, allow the creation of functions which have no specified name. They are most useful as the value of callback parameters, but they have many other uses.
+
+## Example
+
+```php
+<?php
+$favourite = array(
+		'fruit' => 'Mango',
+		'color' => 'Green',
+		'day' => 'Obviously Sunday',
+    );
+foreach ($favourite as $key=>$value) {
+	  printf ("My favourite %s is %s\n", $key, $value);
+}
+```
+Output
+
+My favourite fruit is Mango
+My favourite color is Green
+My favourite day is Obviously Sunday
+
+-> Little aside, can we do same example without foreach?
+-> array_map
+-> array_walk (for associative arrays)
+
+## Example with array_walk
+
+```php
+<?php
+$favourite = array(
+		'fruit' => 'Mango',
+		'color' => 'Green',
+		'day' => 'Obviously Sunday',
+    );
+
+function display($name, $value)
+{
+    printf ("My favourite %s is %s\n", $name, $value);
+}
+
+array_walk($favourite, 'display');
+```
+
+> Advantage: It is faster than foreach.
+
+> Disadvantage, I've one more function in scope.
+
+## Lambda
+
+```php
+<?php
+$favourite = array(
+		'fruit' => 'Mango',
+		'color' => 'Green',
+		'day' => 'Obviously Sunday',
+    );
+
+array_walk($favourite, function($name, $value) {
+		printf ("My favourite %s is %s\n", $name, $value);
+});
+```
+
+> We needed function only once, make it immediately and it is not available anymore after operation.
+
+> Few more new things in PHP 5.3 but namespace was most important. LEts move to PHP 5.4
+
+## What was new in PHP 5.4?
+
+- * Traits (most important)
+- Build-in web server (Allows quick local testing)
+- Short array syntax
+- Function array dereferencing
+- Closures can use $this
+- <?= available regardless of short_open_tag setting.
+
+## Traits
+
+- Minimising code duplication is one of major goal of OOP.
+- PHP, being single inheritance model, have some limitation.
+- If you similar code in two unrelated classes (Cant extend same class)
+  - Refactoring: Extract class.
+  - but it do not fit every where.
+- PHP 5.4 had new solutions; Traits
+
+## Traits
+
+Traits is a mechanism for code reuse in single inheritance languages such as PHP. A Trait is intended to reduce some limitations of single inheritance by enabling a developer to reuse sets of methods freely in several independent classes living in different class hierarchies.
+
+## Traits Example
+
+```php
+<?php
+class XmlWriter extends FileWriter
+{
+    private static $instance;
+
+    public static function getInstance() {
+        if (is_null(self::instance)) {
+            self::instance = new XmlWriter();
+        }
+    }
+}
+
+class CsvReader extends FileReader
+{
+    private static $instance;
+
+    public static function getInstance() {
+        if (is_null(self::instance)) {
+            self::instance = new CsvReader();
+        }
+    }
+}
+```
+
+> Consider we want both of these class as singleton.
+
+> Without multiple inheritance support, both class need to implement singleton code.
+
+## Traits example
+
+```php
+<?php
+trait Singleton
+{
+    private static $instance;
+
+    public static function getInstance() {
+        if (is_null(self::$instance)) {
+            self::$instance = new self;
+        }
+
+        return self::$instance;
+    }
+}
+
+class DbReader extends ArrayObject
+{
+    use Singleton;
+}
+
+class  FileReader
+{
+    use Singleton;
+}
+```
+
+## What was new in PHP 5.5
+
+- * New Password hashing API
+- * Generators
+- finally keyword
+- List support in foreach
+- Array and string literal dereferencing
+- Class name resolution via ::class
+- Non scalar keys support for foreach.
+
+## Password hashing
+
+- How do you hash your password?
+
+->
+```php
+<?PHP
+
+$hash = md5($password);
+```
+
+-> Not safe
+
+-> There are lot of md5 database.
+
+->
+```php
+<?php
+
+$hash = md5($password . $salt);
+```
+
+-> Still not safe, not because cryptographic weaknesses but because it is too fast
+-> Too fast for Brute-force attack.
+
+## Password hashing
+
+- PHP 5.5 came with simple password hashing api.
+- To hash password
+```php
+$hash = password_hash($passwod, PASSWORD_DEFAULT);
+```
+- Verifing password is also easy:
+```php
+if (password_verify($password, $hash)) {
+    // Success!
+}
+else {
+    // Invalid credentials
+}
+```
+
+> There is more in password hashing, look at manuals for details.
+
+## Generators
+
+## What is new in php 5.6
+
+- Constant expression
+- Constant array
+- ... operator (for variable length parameters)
+- use const and use function
+- \_\_debugInfo() magic method
+
+## PHP 5.7
+
+- Well not released and will not be released.
+- Proposed PHP 5.7 was:
+  - Prepare our users to 7
+  - No or very little additions, development must be focused on 7
+  - Keep to our release process
+- Supposed to add the necessary notices or deprecation notices to prepare our users to move to 7.
+- However in voting, it was voted down. So no PHP 5.7.
+
+## PHP 7
+
+Internal goals
+
+- 100%+ performance gain on most real world applications.
+- Lower memory usages.
+
+## PHP 7 (for developers)
+
+- Type hinting for primitive data types
+- Return type
+- Spaceship operator
+- Anonymous Class
+- Null coalesce operator (??)
+- Exceptions on Fatals
+- Many new reserved keywords

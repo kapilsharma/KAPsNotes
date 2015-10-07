@@ -13,22 +13,24 @@ This is the list of notes I'd like to finish. A check box show if the notes are 
 
 * [ ] [General Notes] (generalnotes.md)
 * [ ] Development Environment
-  * [ ] [Ubuntu](ubuntu/README.md)
-  * [ ] LAMP (PHP) Setup
-    * [ ] Windows
-    * [ ] Linux
-  * [ ] Vagrant
-    * [ ] Puppet
-    * [ ] Homestead
+    * [ ] [Ubuntu](ubuntu/README.md)
+    * [ ] LAMP (PHP) Setup
+        * [ ] Windows
+        * [ ] Linux
+    * [ ] Vagrant
+        * [ ] Puppet
+        * [ ] Homestead
 * [ ] Database
-  * [ ] MySQL
-  * [ ] Postgress
-  * [ ] MongoDB
-  * [ ] Cassendra
+    * [ ] MySQL
+    * [ ] Postgress
+    * [ ] MongoDB
+    * [ ] [Cassendra](Cassandra/README.md)
 * [ ] Programming Languages
-  * [ ] PHP
-    * [ ] Laravel
-    * [ ] Symfony
-    * [ ] Wordpress
-  * [ ] Java Script
-  * [ ] Android
+    * [ ] PHP
+        * [ ] Laravel
+        * [ ] Symfony
+        * [ ] Wordpress
+    * [ ] Java Script
+    * [ ] Android
+* [ ] Testing
+    * [ ] [Selenium](Testing/Selenium/README.md)

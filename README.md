@@ -28,7 +28,7 @@ This is the list of notes I'd like to finish. A check box show if the notes are 
     * [ ] [Cassendra](Cassandra/README.md)
 * [ ] Programming Languages
     * [ ] PHP
-        * [ ] Laravel
+        * [ ] [Laravel](php/laravel/readme.md)
         * [ ] Symfony
         * [ ] Wordpress
     * [ ] Java Script

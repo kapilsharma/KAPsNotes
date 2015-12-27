@@ -45,7 +45,7 @@ We can create ssh key and configure it in Homestead.yml file or connect directly
 ## PHPMyAdmin
 
 PHPMyAdmin is one of the most common tool used by developers, but not available in Homestead by default. However, we can install it as follow:
- 
+
 ### Installing PHPMyAdmin
 
 * SSH into Homestead vagrant box with vagrant ssh and type the following command:
@@ -57,7 +57,7 @@ sudo apt-get install phpmyadmin
 * when prompted to select the Web server, select apache2 and press Enter, just to get pass it.
 * when prompted to config database for phpmyadmin with dbconfig-common, select Yes and press Enter.
 * when prompted for Password of the database's administrative user, enter secret and press Enter.
-* when prompted for MySQL application password for phpmyadmin, enter secret and press Enter.
+* when prompted for MySQL application password for phpmyadmin, enter `secret` and press Enter.
 * when prompted for Password confirmation, enter secret again and press Enter.
 
 ### Create and config site for Nginx
@@ -89,4 +89,3 @@ serve phpmyadmin.app /usr/share/nginx/html/phpmyadmin
 ## Homeshed document
 
 http://laravel.com/docs/homestead
-

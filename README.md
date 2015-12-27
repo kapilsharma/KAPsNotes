@@ -14,6 +14,7 @@ This is the list of notes I'd like to finish. A check box show if the notes are 
 * [ ] [General Notes] (generalnotes.md)
 * [ ] Development Environment
     * [ ] [Ubuntu](ubuntu/README.md)
+    * [ ] [CentOS](CentOS/README.md)
     * [ ] LAMP (PHP) Setup
         * [ ] Windows
         * [ ] Linux
@@ -34,3 +35,5 @@ This is the list of notes I'd like to finish. A check box show if the notes are 
     * [ ] Android
 * [ ] Testing
     * [ ] [Selenium](Testing/Selenium/README.md)
+* [ ] EditorAndIDE
+    * [ ] [Vim](editor/vim.md)

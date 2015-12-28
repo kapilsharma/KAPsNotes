@@ -1,4 +1,4 @@
-Z# Enabling network in Cent OS 7
+# Enabling network in Cent OS 7
 
 First, type “nmcli d” command in your terminal for quick list ethernet card installed on your machine:
 

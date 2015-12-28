@@ -21,6 +21,15 @@ TODO: Add basic setup steps.
 
 # Database
 
-This might looks surprise to someone but first thing I generally do before starting any project is to create its database; might not be perfect but at least a basic one.
+This might be surprise to someone but first thing I generally do before starting any project is to create its database; might not be perfect but at least a basic one.
+
+If this is not the priority list of your project right now, you can skip this section and come back once you are ready for database setup.
+
+Laravel basically use `migrations` and `seeder` to create/update database tables and add initial seed data respectively.
+
+- [ ] [Migration](php/laravel/database/migration.md)
+- [ ] [Seeder](php/laravel/database/seeder.md)
+
+## Migration
 
 [Migration](php/laravel/database_migration.md)

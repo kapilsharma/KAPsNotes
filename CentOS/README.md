@@ -50,6 +50,12 @@ curl -sS https://getcomposer.org/installer | php
 sudo mv composer.phar /usr/local/bin/composer
 ```
 
+# Install git
+
+```
+yum install git
+```
+
 # Create project and install PHPUnit-selenium
 
 ```

@@ -4,9 +4,9 @@ Planned blog posts
 
 ## Published
 
-## Incomplete
-
 - Selecting a right PHP framework
+
+## Incomplete
 
 ## Planned
 

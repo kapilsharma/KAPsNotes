@@ -32,6 +32,20 @@ sudo /usr/bin/Xvfb :1 -screen 0 1024x768x24 &
 
 firefox
 
+## Errors in firefox
+
+**Error**
+
+> GLib-GIO-Message: Using the 'memory' GSettings backend.  Your settings will not be saved or shared with other applications.
+
+**Solution**
+
+```bash
+yum install dconf dconf-editor
+```
+
+https://ask.fedoraproject.org/en/question/50588/glib-gio-message-what-is-it/
+
 # Selenium
 
 ```

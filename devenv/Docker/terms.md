@@ -1,0 +1,44 @@
+# Docker terms
+
+Following are terms to remember in docker
+
+- Docker Machine
+  - A docker machine is the VM that hold our image and containers. Docker machine is needed on Mac or windows box, which do not contain linux kernel. It is used to run docker (engine), which runs natively on Linux.
+  - Create VM
+    - While installing docker on Mac and windows, we get `default` Docker machine. We can create more with following command.
+    - `docker-machine create --driver virtualbox docker-vm`
+  - Print Machine configuration
+    - `docker-machine env docker-vm`
+  - Switching docker machine.
+    - Use docker vm
+      - `eval "$(docker-machine env docker-vm)"`
+    - Use dev machine
+      - `eval "$(docker-machine env dev)"`
+- Docker container
+  - As name suggest, container is used to contain something.
+  - In simple words, container is stripped-to-basics version of Linux. Thus it is necessarily the operation system, a minimal one without any softwares.
+  - List down running containers
+    - `docker ps`
+  - List down all containers (running or stopped)
+    - `docker ps -a`
+  - Other container commands
+    - Start container
+      - `docker start container_id`
+    - Stop container
+      - `docker stop container_id`
+    - Restart container
+      - `docker restart container_id`
+    - Kill container
+      - docker kill container_id
+    - Remove container
+      - docker rm container_id
+- Docker images.
+  - Docker images are basically the softwares that we want to be installed on basic/minimal operating system (containers).
+  - There are lot of docker images (with pre-installed softwares) available on Docker hub. We can search or use any of them or even create our own images.
+  - Download images
+    - `docker pull imgname`
+  - Display images already downloaded
+    - `docker images`
+  - Remove docker images
+    - `docker rmi -f imgid`
+  -

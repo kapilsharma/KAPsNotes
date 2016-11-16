@@ -1,6 +1,9 @@
 # Source
 
 > These notes are created while watching docker tutorial from https://www.youtube.com/watch?v=h0NCZbHjIpY
+>
+> However few changes made later after viewing:
+> - https://www.youtube.com/watch?v=Ch1k8-vMG_E
 
 # Agenda
 
@@ -13,7 +16,15 @@ In this video tutorial by Edureka, we will cover following 4 topics.
 - Docker Architecture.
 - Hands-on
 
-## Difference between virtualization and containerization
+## Why we need docker?
+
+Or why we need virtualization or containerization?
+
+![Bare-metal server](images/bare_metal_server.png)
+
+As shown in above figure, earlier peoples were using dedicated machines, for Bare-Metal Server. That means we have high configuration hardware, having OS on top of it. On OS, we have all required software. It was a standard for a long time.
+
+Now a days, we have very high end server. It means, if we have dedicated server, we would be wasting lot of costly resources. Thus, need arise for having multiple applications on same server. To keep them separate from each other, Virtual Private Servers (VPS) was the solution and virtualization appears
 
 ### Virtualization
 
@@ -70,6 +81,15 @@ In this video tutorial by Edureka, we will cover following 4 topics.
 
 > Thus docker containers provide an entire runtime environment, an application, all irs dependencies, libraries and other binaries, and configuration files needed to run it, bundled into one package.
 
+## Installing docker
+
+> To do
+>
+> - Docker for Linux
+> - Docker for Windows
+> - Docker for OS X
+> - Docker toolbox (For OS X and Windows)
+
 ## How docker works?
 
 ![How docker works](images/docker_engine.png)
@@ -81,7 +101,6 @@ Docker works a client server application. Docker engine provides:
 
 We can use docker client to communicate with docker (host). Docker client internally use REST API with combination of socket IO and TCP/IP connection to communicate with docker host.
 
-
 On Windows and Mac OS, there is an additional component called **Docker toolbox**. On linux, docker basically use linux kernel of host operating system even for container OS. However on windows and Mac OS do not have linux kernel. Thus docker toolbox provide equivalent of linux kernel on these two operating systems. It contains:
 
 - Docker client
@@ -89,6 +108,14 @@ On Windows and Mac OS, there is an additional component called **Docker toolbox*
 - Kitematic
 - Machine and 
 - Virtual box
+
+However with newer versions of docker, Windows & OS X, there are new technologies, allowing docker run more easily.
+
+- Windows 2016 have Server Containers, which provide kernel like interface to work with containers directly.
+    - On older windows, we can use Hyper-V Containers, which can run virtualized container environment.
+- OS X 10.10 have xhyve, which is virtualization layer like Hyper-V of Windows.
+
+Older OS x and windows can use use Docker toolbox, which use virtual box to install linux.
 
 ## Docker images and containers
 
@@ -201,3 +228,36 @@ We discussed:
 - **Docker images:** Images are used to create Docker containers. Docker provides a simple way to build new images or update existing images. docker images are build component of Docker.
 - **Docker registry:** Registries store images. These are public or private stores from which you upload/download images. This can be done in Docker Hub, which id Docker's version of Github. Docker registries are the distribution component of Docker.
 - **Docker containers:** Containers are created from Docker images. They hold everything that is needed for an application to run. Each container is an isolated and secure application platform. Docker containers are the run component of Docker. 
+
+## Command options:
+
+### docker run
+
+> Syntax: docker run [options] image [command] [arguments]
+
+**Options**
+
+- `--rm` tells docker to remove the container once it is done.
+- `-i` run interactive mode.
+- `-t` run tty.
+- `-d` run in background (Daemon mode)
+- `--name <name>` to give a name to the container.
+- `-p <local port>:<container port>`  
+
+### Get bash of running container
+
+```bash
+docker exec -ti <container name> bash
+```
+
+
+## Docker for PHP developers
+
+As PHP developers, most of the time, we need to run a web server; apache or nginx or else. As a quick example, lets start a Nginx container.
+
+```bash
+docker run -d --name web1 -p 8080:80 nginx
+```
+
+Here, we do not want interactive terminal (no use on nginx server) so we used `-d`. We also want to give server a name thus `--name web`. Nginx, by default, runs on port 80. However we might have other programs on host machine running on port 80. So we will use port 8080 of local machine as port 80 on container. Thus we used `-p 8080:80` and at last, we want to pull existing nginx image.
+

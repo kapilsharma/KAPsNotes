@@ -32,8 +32,9 @@ This is the list of notes I'd like to finish. A check box show if the notes are 
         * [ ] Symfony
         * [ ] Wordpress
     * [ ] Java Script
+        * [ ] [Node JS](js/node/README.md)
     * [ ] Android
 * [ ] Testing
     * [ ] [Selenium](Testing/Selenium/README.md)
-* [ ] EditorAndIDE
+* [ ] Editor and IDE
     * [ ] [Vim](editor/vim.md)

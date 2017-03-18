@@ -32,6 +32,7 @@ This is the list of notes I'd like to finish. A check box show if the notes are 
         * [ ] Symfony
         * [ ] Wordpress
     * [ ] Java Script
+        * [ ] [Angular JS 2](js/AngularJS2/README.md)
         * [ ] [Node JS](js/node/README.md)
     * [ ] Android
 * [ ] Testing

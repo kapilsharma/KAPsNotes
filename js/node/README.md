@@ -4,6 +4,18 @@
 
 ## Installation
 
+First time, we can simply download and install latest available version of Node JS. Once it is installed, it comes with NPM (Node Package Manager).
+
+### Updating node JS
+
+Once node JS is installed, we can use `N`, Node Version Manager, to get other versions of Node JS and change them. To install `N`, run command
+
+```bash
+npm install -g n
+```
+
+More details of `N` can be found at [https://github.com/tj/n](https://github.com/tj/n).
+
 ## Node JS Frameworks
 
 There are lot of NodeJs frameworks available. More details about them can be found on [nodeframework.com](http://nodeframework.com/)

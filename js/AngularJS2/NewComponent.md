@@ -26,6 +26,8 @@ It we generate 4 files in a new folder and update `app.module.ts`.
 
 > Short cut: Angular cli provide short cuts to work quickly. Thus, `ng generate component ComponentName` can be written in short as `ng g c ComponentName` and it will work as same.
 
+There are few other options while creating components. Some important are, `--flat` if we do not want separate folder for new component. We can use `--inline-styles` or `-is` for not generating css file in case we want inline styles. Similiarly, we can use `--inline-template` or `-it` for inline template. They all are possible but ideally not recommended.
+
 ### Changes
 
 This command generated four files and edit one file:
@@ -64,3 +66,11 @@ Other files, contins html and css for our component.
 Last new file, `*.spec.ts` contains test case. We will discuss about it while testing Angular 2 applications.
 
 #### app.modules.ts
+
+In app.modules.ts file, CLI will made necessary changes to load our new module on angular page.
+
+#### Using new component
+
+We can quickly edit second-component.component.html and to see its effect, we can use defined `app-second` selector in another component.
+
+Why another component? Because as discussed in [Request flow/life cycle](RequestFlow.md), `main.ts` bootstrap (start) one component and all other components are within this root component.

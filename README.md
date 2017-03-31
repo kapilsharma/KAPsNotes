@@ -21,6 +21,8 @@ This is the list of notes I'd like to finish. A check box show if the notes are 
     * [ ] Vagrant
         * [ ] Puppet
         * [ ] Homestead
+    * [ ] Valet
+        * [ ] [Valet](devenv/valet/README.md)
 * [ ] Database
     * [ ] MySQL
     * [ ] Postgress

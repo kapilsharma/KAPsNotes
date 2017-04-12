@@ -23,6 +23,9 @@ This is the list of notes I'd like to finish. A check box show if the notes are 
         * [ ] Homestead
     * [ ] Valet
         * [ ] [Valet](devenv/valet/README.md)
+* [ ] [Cheatsheets](CheatSheet/README.md)
+    * [ ] Database
+        * [ ] [MySQL](CheatSheet/Database/MySQL.md)
 * [ ] Database
     * [ ] MySQL
     * [ ] Postgress

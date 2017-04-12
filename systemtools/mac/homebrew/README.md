@@ -20,4 +20,4 @@ Home brew is a dependency (software) management tool for Mac OS X.
     - Example: `brew search php71` will search all available PHP 7.1 packages
 - To install formula: `brew install formula`.
     - Example: `brew install php71`
-- To uninstall formula: `brew uninstall`
+- To uninstall formula: `brew uninstall formula`
